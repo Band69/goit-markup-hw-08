@@ -1,0 +1,105 @@
+@import "../utils/variables";
+@import "../utils/utilities";
+@import "../utils/placeholders";
+@import "../utils/breakpoints";
+@import "../utils/mixin";
+
+/* Portfolio css options */
+.portfolio__list {
+  @extend %no-list;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+
+.card {
+  width: 100%;
+  margin: 15px;
+
+  @media screen and (min-width: $tablet) {
+    width: 354px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 370px;
+  }
+
+  &__image {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  &__box-image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__content {
+    padding: 20px 0px;
+
+    // border-top: 1px solid $font-color-third;
+    border-right: 1px solid $border-color-portfolio;
+    border-bottom: 1px solid $border-color-portfolio;
+    border-left: 1px solid $border-color-portfolio;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    padding: 0px 24px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: $font-color-secondary;
+  }
+
+  &__kinde {
+    padding: 0px 24px;
+
+    font-size: 16px;
+    line-height: 1.87;
+    color: $font-color-primary;
+  }
+}
+
+.card__link {
+  @extend %no-link;
+  display: block;
+  transition: box-shadow $transition-duration $transition-timing-function
+    $transition-delay;
+
+  &:hover,
+  &:focus {
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      0px 1px 1px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.card__description {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 63px 24px;
+  width: 100%;
+  height: 100%;
+  transform: translate(0, 101%);
+
+  font-size: 18px;
+  line-height: 1.56;
+  color: $bgc-primary;
+  background-color: $bgc-card-description;
+
+  transition: transform $transition-duration $transition-timing-function
+    $transition-delay;
+
+  .card__link:hover &,
+  .card__link:focus & {
+    transform: translate(0, 0);
+  }
+}

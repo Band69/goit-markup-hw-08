@@ -1,0 +1,52 @@
+@import "../utils/variables";
+@import "../utils/utilities";
+@import "../utils/placeholders";
+@import "../utils/breakpoints";
+@import "../utils/mixin";
+
+/* Button */
+%button {
+  @extend %no-link;
+  display: inline-flex;
+  min-width: 200px;
+  height: 50px;
+  padding: 10px 32px;
+  border-radius: 4px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: $font-color-button;
+  text-align: center;
+
+  background-color: $bgc-button;
+}
+
+/* Hero button */
+.hero__btn {
+  @extend %button;
+  border-style: none;
+}
+
+/* Modal button */
+.submit__btn {
+  @extend %button;
+  border-style: none;
+  justify-content: center;
+}
+
+/* JOIN button */
+.join__btn {
+  @extend %button;
+  align-items: center;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  .icon-send {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+
+    fill: currentColor;
+  }
+}

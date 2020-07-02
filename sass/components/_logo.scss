@@ -1,0 +1,51 @@
+@import "../utils/variables";
+@import "../utils/utilities";
+@import "../utils/placeholders";
+@import "../utils/breakpoints";
+@import "../utils/mixin";
+
+/* Logo */
+%logo {
+  @extend %no-link;
+  width: 153px;
+
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+}
+
+/* Logo header */
+.logo__nav {
+  @extend %logo;
+  z-index: 999;
+
+  color: $font-color-secondary;
+  @media screen and (max-width: $tablet - 1px) {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin-right: 81px;
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 85px;
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+}
+
+/* Logo footer */
+.logo__footer {
+  @extend %logo;
+  color: $font-color-third;
+}
+
+/* Logo accent */
+.logo__accent {
+  color: $font-color-active-element;
+}

@@ -1,0 +1,61 @@
+@import "../utils/variables";
+@import "../utils/utilities";
+@import "../utils/placeholders";
+@import "../utils/breakpoints";
+@import "../utils/mixin";
+
+.join {
+  @media screen and (max-width: $desktop - 1px) {
+    text-align: center;
+  }
+}
+
+.join__title {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+
+.join__conteiner {
+  display: block;
+
+  @media screen and (min-width: $desktop) {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .join__email {
+    padding: 15px 16px;
+
+    color: $font-color-ftr-contact;
+    background-color: $bgc-footer;
+    font-size: 16px;
+    line-height: 1.25;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+    @media screen and (max-width: $desktop - 1px) {
+      margin-bottom: 20px;
+      margin-left: auto;
+      margin-right: auto;
+
+      @media screen and (max-width: $tablet) {
+        width: 100%;
+      }
+    }
+
+    @media screen and (min-width: $tablet) {
+      width: 450px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-right: 12px;
+      width: 358px;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+// /* Global css options for all pages */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  // outline: 1px solid green;
+}
+
+body {
+  margin: 0px;
+
+  font-family: $primary-font-style;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: $font-color-primary;
+
+  background-color: $bgc-primary;
+
+  &.modal-open {
+    overflow: hidden;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* visually hidden */
+.portfolio__title--hiden,
+.feature__title--hiden,
+.checkbox--hiden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}

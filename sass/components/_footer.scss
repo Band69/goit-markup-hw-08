@@ -1,0 +1,120 @@
+@import "../utils/variables";
+@import "../utils/utilities";
+@import "../utils/placeholders";
+@import "../utils/breakpoints";
+@import "../utils/mixin";
+
+/* General */
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  color: $font-color-third;
+  background-color: $bgc-footer;
+}
+
+.footer__content {
+  display: block;
+  align-items: baseline;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: $desktop - 1px) {
+      justify-content: space-around;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+  }
+}
+
+.footer__contacts {
+  @media screen and (max-width: $desktop - 1px) {
+    margin-bottom: 60px;
+
+    text-align: center;
+  }
+}
+
+/* Footer address css options */
+.address {
+  display: flex;
+  flex-direction: column;
+
+  font-style: normal;
+}
+
+.address__geo,
+.address__email,
+.address__tel {
+  @extend %no-link;
+  margin-top: 10px;
+}
+
+.address__email,
+.address__tel {
+  color: $font-color-ftr-contact;
+}
+
+/* Footer social net css options */
+.footer-social {
+  @media screen and (max-width: $desktop - 1px) {
+    padding-bottom: 60px;
+
+    text-align: center;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-left: 70px;
+    margin-right: 94px;
+  }
+}
+
+.footer-social__title {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+
+.footer-social__list {
+  @extend %no-list;
+  display: flex;
+
+  @media screen and (max-width: $desktop - 1px) {
+    justify-content: center;
+  }
+}
+
+.social-net:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-net__icon {
+  fill: $font-color-third;
+}
+
+.social-net__link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  color: $font-color-primary;
+  background-color: $font-color-ftr-social;
+
+  transition: background-color $transition-duration $transition-timing-function
+    $transition-delay;
+
+  &:hover,
+  &:focus {
+    background-color: $font-color-active-element;
+  }
+}

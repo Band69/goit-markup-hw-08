@@ -1,0 +1,117 @@
+@import "../utils/variables";
+@import "../utils/utilities";
+@import "../utils/placeholders";
+@import "../utils/breakpoints";
+@import "../utils/mixin";
+
+/* Team css options */
+.team--bgc {
+  background-color: $bgc-secondary;
+}
+
+.team__list {
+  @extend %no-list;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    margin: -15px;
+  }
+}
+
+.team__member {
+  width: 450px;
+
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 0px 0px 4px 4px;
+  overflow: hidden;
+
+  @media screen and (max-width: $tablet - 1px) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    margin: 15px;
+    width: 354px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 270px;
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.team__image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  // width: 270px;
+  width: 100%;
+}
+
+.team__description {
+  padding-top: 30px;
+  padding-bottom: 24px;
+
+  background-color: $bgc-primary;
+}
+
+.team__name {
+  margin-bottom: 10px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  color: $font-color-secondary;
+}
+
+.team__position {
+  margin-bottom: 16px;
+
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  color: $font-color-primary;
+}
+
+.team__social-net {
+  @extend %no-list;
+  display: flex;
+  justify-content: center;
+}
+
+.team__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.team__social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  color: $font-color-primary;
+  fill: $border-color-client;
+  background-color: $bgc-primary;
+
+  transition: color $transition-duration $transition-timing-function
+      $transition-delay,
+    background-color $transition-duration $transition-timing-function
+      $transition-delay;
+
+  &:hover,
+  &:focus {
+    fill: currentColor;
+    color: $font-color-third;
+    background-color: $font-color-active-element;
+  }
+}

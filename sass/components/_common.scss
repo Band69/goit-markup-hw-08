@@ -1,0 +1,62 @@
+@import "../utils/variables";
+@import "../utils/utilities";
+@import "../utils/placeholders";
+@import "../utils/breakpoints";
+@import "../utils/mixin";
+
+.conteiner {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  // mixin breakpoints
+  @include breakpoints($mobile);
+  // @media screen and (min-width: 480px) {
+  //   width: 480px;
+  // }
+
+  // mixin breakpoints
+  @include breakpoints($tablet);
+  // @media screen and (min-width: 768px) {
+  //   width: 768px;
+  // }
+
+  // mixin breakpoints
+  @include breakpoints($desktop);
+  // @media screen and (min-width: 1200px) {
+  //   width: 1200px;
+  // }
+}
+
+/* Sections css options*/
+.feature--section,
+.team--section,
+.client--section,
+.portfolio--section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+.product--section {
+  padding-bottom: 94px;
+}
+
+.feature__title,
+.products__title,
+.team__title,
+.client__title,
+.portfolio__title {
+  margin-bottom: 50px;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  color: $font-color-secondary;
+}

@@ -1,0 +1,51 @@
+@import "../utils/variables";
+@import "../utils/utilities";
+@import "../utils/placeholders";
+@import "../utils/breakpoints";
+@import "../utils/mixin";
+
+/* Product css options */
+.product {
+  display: none;
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+  }
+}
+
+.product__list {
+  @extend %no-list;
+  display: flex;
+}
+
+.product__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.product__box {
+  position: relative;
+}
+
+.product__image {
+  width: 370px;
+}
+
+.product__title {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  color: $font-color-third;
+  text-align: center;
+  text-transform: uppercase;
+
+  background: rgba(47, 48, 58, 0.8);
+}

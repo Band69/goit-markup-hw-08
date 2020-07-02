@@ -1,0 +1,66 @@
+@import "../utils/variables";
+@import "../utils/utilities";
+@import "../utils/placeholders";
+@import "../utils/breakpoints";
+@import "../utils/mixin";
+
+/* Clients */
+.client__list {
+  @extend %no-list;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: $desktop - 1px) {
+    margin: -15px;
+  }
+}
+
+.client__item {
+  @media screen and (max-width: $desktop - 1px) {
+    margin: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: $desktop) {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.client__link {
+  display: flex;
+  width: 210px;
+  height: 90px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid $border-color-client;
+  border-radius: 4px;
+  color: $font-color-primary;
+  fill: $border-color-client;
+
+  @media screen and (min-width: $mobile) {
+    width: 210px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 226px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 170px;
+  }
+
+  transition: color $transition-duration $transition-timing-function
+      $transition-delay,
+    border $transition-duration $transition-timing-function $transition-delay;
+
+  &:hover,
+  &:focus {
+    color: $font-color-active-element;
+    border: 1px solid $font-color-active-element;
+  }
+}
